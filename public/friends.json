@@ -90,7 +90,7 @@
     "email": "marco.rossi@email.com",
     "days_since_contact": 11,
     "status": "almost due",
-    "tags": ["football", "weekend league"],
+    "tags": ["football", "league"],
     "bio": "Teammate from local football league. Plays as a striker.",
     "goal": 14,
     "next_due_date": "2026-04-16"
@@ -102,7 +102,7 @@
     "email": "yuki.tanaka@email.com",
     "days_since_contact": 6,
     "status": "on-track",
-    "tags": ["language exchange", "Japanese"],
+    "tags": ["language", "Japanese"],
     "bio": "Language partner helping me practice Japanese. Interested in European culture.",
     "goal": 14,
     "next_due_date": "2026-04-21"
