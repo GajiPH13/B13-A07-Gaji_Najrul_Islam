@@ -88,7 +88,7 @@ const FriendsDetails = () => {
                   {tags[1]}
                 </div>
               </div>
-              <p>"{bio}"</p>
+              <p className="line-clamp-2">"{bio}"</p>
               <p>Prefered:{email}</p>
             </div>
           </div>
@@ -145,21 +145,21 @@ const FriendsDetails = () => {
           </p>
           <div className=" flex justify-between gap-3 ">
             <button
-              onClick={() => handelHistoryLog(expectedFriends, "call")}
+              onClick={() => handelHistoryLog(expectedFriends, "Call")}
               className="btn w-56 h-30 flex flex-col gap-2 items-center p-4 bg-gray-50"
             >
               <img src={Call} alt="" className="w-8 h-8 object-cover" />
               <p>Call</p>
             </button>
             <button
-              onClick={() => handelHistoryLog(expectedFriends, "text")}
+              onClick={() => handelHistoryLog(expectedFriends, "Text")}
               className="btn w-56 h-30 w-56 flex flex-col gap-2 items-center p-4 bg-gray-50"
             >
               <img src={Text} alt="" className="w-8 h-8 object-cover" />
               <p>Text</p>
             </button>
             <button
-              onClick={() => handelHistoryLog(expectedFriends, "video")}
+              onClick={() => handelHistoryLog(expectedFriends, "Video")}
               className="btn w-56 h-30 w-56 flex flex-col gap-2 items-center p-4 bg-gray-50"
             >
               <img src={Video} alt="" className="w-8 h-8 object-cover" />
