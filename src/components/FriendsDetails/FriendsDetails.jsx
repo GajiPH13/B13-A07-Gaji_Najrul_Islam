@@ -36,7 +36,8 @@ const FriendsDetails = () => {
 
   return (
     <div className="grid grid-cols-[1fr_2fr]  gap-3 px-61  py-20 bg-gray-50">
-      <div className="max-w-87">left
+      {/* left */}
+      <div className="max-w-87">
         <div>
           <div className="card bg-white shadow-sm">
             <figure className="pt-5">
@@ -48,7 +49,13 @@ const FriendsDetails = () => {
             </figure>
             <div className="card-body items-center text-center">
               <h2 className="card-title">{name}</h2>
-              <div className="badge bg-[#CBFADB] text-[#244D3F] ">
+              <div className={`badge  
+        ${
+          status == 'overdue'? 'bg-[#EF4444] text-white':
+          status == 'almost due'? 'bg-[#EFAD44] text-white':
+          status == 'on-track'? 'bg-[#244D3F] text-white': 'bg-ghost'
+        
+        }`}>
                 <p>{status}</p>
               </div>
               <div className="flex gap-2">
@@ -80,30 +87,32 @@ const FriendsDetails = () => {
           </div>
         </div>
       </div>
-      <div className="">right
-        <div className="flex justify-start text-center  gap-3">
-            <div className="bg-white px-4 py-8 shadow-sm rounded-lg">
+
+      {/* right */}
+      <div className="">
+        <div className="flex justify-between text-center  gap-3">
+            <div className="bg-white px-12 py-10 shadow-sm rounded-lg">
                 <p className="font-semibold text-3xl text-[#244D3F]">{days_since_contact}</p>
                 <p>Days Since Contact</p>
             </div>
-            <div className="bg-white px-12 py-8 shadow-sm rounded-lg">
+            <div className="bg-white px-20 py-10 shadow-sm rounded-lg">
                 <p className="font-semibold text-3xl text-[#244D3F]">{goal}</p>
                 <p>Goal (Days)</p>
             </div>
-            <div className="bg-white px-4 py-8 shadow-sm rounded-lg">
+            <div className="bg-white px-10 py-10 shadow-sm rounded-lg">
                 <p className="font-semibold text-3xl text-[#244D3F]">{next_due_date}</p>
                 <p>Next Due</p>
             </div>
             
         </div>
-        <div className="p-6 bg-white rounded-lg shadow-sm space-y-4 my-4">
+        <div className="px-6 py-11.5 bg-white rounded-lg shadow-sm space-y-4 my-4">
             <div className="flex justify-between">
                 <h2 className="text-2xl font-medium  text-[#244D3F]">Relationship Goal</h2>
                 <button className="btn btn-ghost">Edit</button>
             </div>
             <p className="text-left">Connect every 30 days</p>
         </div>
-       <div className="p-6 bg-white rounded-lg">
+       <div className="px-6 py-3 bg-white rounded-lg">
          <p className="font-medium text-2xl text-[#244D3F] mb-3">Quick Check-In</p>
          <div className=" flex justify-between gap-3 ">
            

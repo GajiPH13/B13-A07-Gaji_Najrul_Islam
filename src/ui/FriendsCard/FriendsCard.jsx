@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const FriendsCard = ({ friend }) => {
 //   console.log(friend);
   return (
-    <Link to={`/friendsdetails/${friend.id}`} className="card bg-white shadow-sm">
+    <Link to={`/friendsdetails/${friend.id}`} className="card bg-gray-50 shadow-sm">
       <figure className="pt-5">
         <img
           src={friend.picture}
@@ -23,7 +23,13 @@ const FriendsCard = ({ friend }) => {
             {friend.tags[1]}
           </div>
         </div>
-        <div className="badge bg-[#CBFADB] text-[#244D3F] ">
+        <div className={`badge  
+        ${
+          friend.status == 'overdue'? 'bg-[#EF4444] text-white':
+          friend.status == 'almost due'? 'bg-[#EFAD44] text-white':
+          friend.status == 'on-track'? 'bg-[#244D3F] text-white': 'bg-ghost'
+        
+        }`}>
             {friend.status}
           </div>
       </div>
