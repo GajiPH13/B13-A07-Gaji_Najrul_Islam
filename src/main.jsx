@@ -5,9 +5,12 @@ import './index.css'
 import {  RouterProvider } from 'react-router'
 
 import { router } from './Routes/Routes.jsx'
+import FriendsContext from './context/FriendsContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+   <FriendsContext>
+     <RouterProvider router={router} />
+   </FriendsContext>
   </StrictMode>,
 )
