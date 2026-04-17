@@ -35,7 +35,9 @@ KinKeeper uses **Recharts** to display interaction data in a **Pie Chart**, help
 * Video Interactions
 
 ---
+## 🚀 Live Demo
 
+[Click here to view the live project](https://kinkeeper-gaji.netlify.app/)
 ## 📦 Installation
 
 Clone the repository:
