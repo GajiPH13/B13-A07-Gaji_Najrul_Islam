@@ -44,7 +44,7 @@ import { LogContext } from "../../context/FriendsContext";
 import Stats from "../../pages/stats/Stats";
 
 const TimeLineLog = ({sortedLogs}) => {
-  // console.log(sortedLogs)
+   console.log(sortedLogs)
   // const { log } = useContext(LogContext);
 
   const dateFormate = (date) => {
@@ -62,7 +62,7 @@ const TimeLineLog = ({sortedLogs}) => {
           key={index}
           className="flex gap-4 mb-2 px-4 py-4 bg-white rounded-lg text-[#64748B]"
         >
-          {/* 🔥 DYNAMIC IMAGE */}
+          
           <img src={logs.icon} alt={logs.type} className="w-6 h-6" />
 
           <div>
@@ -76,7 +76,9 @@ const TimeLineLog = ({sortedLogs}) => {
         </div>
       ))}
       {/* <Stats sortedLogs={sortedLogs}></Stats> */}
+      {/* <Stats sortedLogs={sortedLogs}></Stats> */}
     </div>
+    
   );
 };
 

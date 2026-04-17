@@ -18,6 +18,7 @@ KinKeeper is a modern web application designed to help you stay connected with y
 ## 🛠️ Tech Stack
 
 * **Frontend:** React.js
+* **Page Navigation:** React Router DOM
 * **Styling:** Tailwind CSS + DaisyUI
 * **Charts:** Recharts
 * **Data Source:** Local JSON (from public folder)

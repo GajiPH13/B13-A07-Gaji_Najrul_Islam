@@ -5,15 +5,15 @@ import Stats from "../stats/Stats";
 
 const TimeLine = () => {
 
-  const {handelHistoryLog,log} = useContext(LogContext);
-  // console.log(log);
+  const {log} = useContext(LogContext);
+  //  console.log(handelHistoryLog);
   const [sortLog, setSortLog] = useState("");
 
   const sortedLogs = sortLog
     ? log.filter((logs) => logs.type === sortLog)
     : log;
   // return 0; // No sorting
-  
+  console.log(sortedLogs)
   return (
     <div className="sm:px-6 md:px-61 md:py-40 bg-gray-50 ">
       <p className="text-3xl font-bold text-[#1F2937]">Timeline</p>
@@ -44,7 +44,7 @@ const TimeLine = () => {
       </div>
 
       <TimeLineLog sortedLogs={sortedLogs}></TimeLineLog>
-      <Stats sortedLogs={sortedLogs}></Stats>
+      {/* <Stats sortedLogs={sortedLogs}></Stats> */}
     </div>
   );
 };

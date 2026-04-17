@@ -291,7 +291,7 @@ const FriendsDetails = () => {
         <button className="btn btn-ghost">Edit</button>
       </div>
 
-      <p className="text-left">Connect every 30 days</p>
+      <p className="text-left">Connect every {goal} days</p>
     </div>
 
     {/* quick check-in */}
