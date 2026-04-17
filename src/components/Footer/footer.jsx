@@ -3,7 +3,7 @@ import FooterLogo from "../../assets/logo-xl.png";
 import Instagram from "../../assets/instagram.png";
 import FaceBook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
-
+// DaisyUI Footer
 const footer = () => {
   return (
     <footer className="footer footer-horizontal footer-center bg-[#244D3F]  p-10">

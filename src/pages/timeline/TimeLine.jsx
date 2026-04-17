@@ -19,8 +19,8 @@ const TimeLine = () => {
       <p className="text-3xl font-bold text-[#1F2937]">Timeline</p>
       <div className="flex justify-right my-4">
         <div className="dropdown dropdown-right dropdown-center ">
-          <div tabIndex={0} role="button" className="mt-15 btn md:m-1">
-            Sort By:{sortLog || ""} ⬇️
+          <div tabIndex={0} role="button" className="mt-25 btn md:m-1">
+            Filter timeline:{sortLog || ""} ⬇️
           </div>
           <ul
             tabIndex="-1"
@@ -44,7 +44,7 @@ const TimeLine = () => {
       </div>
 
       <TimeLineLog sortedLogs={sortedLogs}></TimeLineLog>
-      {/* <Stats sortedLogs={sortedLogs}></Stats> */}
+      
     </div>
   );
 };

@@ -41,7 +41,7 @@ const Banner = () => {
         </div>
         
       </div>
-        <div className="px-61 mt-4 ">
+        <div className="sm:text-center md:px-61 mt-4 mb-4 ">
             <h2 className="text-[24px] font-semibold ">Your Friends</h2>
         </div>
     </div>

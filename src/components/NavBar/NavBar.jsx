@@ -12,6 +12,7 @@ const NavBar = () => {
       <li className="mr-1">
         <NavLink
           to={"/"}
+          // Background color is some how not working may be tailwind issue
           className={({ isActive }) =>
            `btn  ${isActive ? "border-3 border-b-[#244D3F] text-[#244D3F]" : "bg-transparent"
           }` 
