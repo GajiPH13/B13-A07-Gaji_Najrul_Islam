@@ -62,13 +62,14 @@ const NavBar = () => {
               {links}
             </ul>
           </div>
-          <p className="ml-4 sm:ml-3"><img src={NavLogo} alt=""  /></p>
+          <p className="ml-4 sm:ml-3 sm:flex justify-center"><img src={NavLogo} alt=""  /></p>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             {links}
             </ul>
         </div>
+        
       </div>
     </div>
   );

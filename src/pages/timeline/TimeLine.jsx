@@ -4,7 +4,8 @@ import TimeLineLog from "../../components/timeLineLog/TimeLineLog";
 import Stats from "../stats/Stats";
 
 const TimeLine = () => {
-  const { log } = useContext(LogContext);
+
+  const {handelHistoryLog,log} = useContext(LogContext);
   // console.log(log);
   const [sortLog, setSortLog] = useState("");
 
