@@ -4,9 +4,10 @@ import FriendsCard from "../../ui/FriendsCard/FriendsCard";
 const friendsPromis = fetch("/friends.json").then((res) => res.json());
 const AllFriends = () => {
   const friendsData = use(friendsPromis);
-//   console.log(friendsData);
+   console.log('Length: ',friendsData.length);
+
   return (
-    <div className=" px-61 py-10 grid grid-cols-4 gap-4">
+    <div className="px-6  grid sm:grid-cols-2 md:grid-cols-3 sm:px-6 lg:grid-cols-4 lg:px-61 py-10 gap-4">
       {
         friendsData.map((friend) => {
             return <FriendsCard friend={friend} key={friend.id}></FriendsCard>

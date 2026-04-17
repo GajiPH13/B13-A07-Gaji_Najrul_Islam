@@ -39,11 +39,13 @@
 // };
 
 // export default TimeLineLog;
-import React, { useContext } from "react";
+// import React, { useContext } from "react";
 import { LogContext } from "../../context/FriendsContext";
+import Stats from "../../pages/stats/Stats";
 
-const TimeLineLog = () => {
-  const { log } = useContext(LogContext);
+const TimeLineLog = ({sortedLogs}) => {
+  // console.log(sortedLogs)
+  // const { log } = useContext(LogContext);
 
   const dateFormate = (date) => {
     return new Intl.DateTimeFormat("en-US", {
@@ -55,24 +57,25 @@ const TimeLineLog = () => {
 
   return (
     <div className="mt-4">
-      {log.map((item, index) => (
+      {sortedLogs.map((logs, index) => (
         <div
           key={index}
           className="flex gap-4 mb-2 px-4 py-4 bg-white rounded-lg text-[#64748B]"
         >
           {/* 🔥 DYNAMIC IMAGE */}
-          <img src={item.icon} alt={item.type} className="w-6 h-6" />
+          <img src={logs.icon} alt={logs.type} className="w-6 h-6" />
 
           <div>
             <p>
-              <span className="text-xl font-medium">{item.type}</span> with{" "}
-              {item.name}
+              <span className="text-xl font-medium">{logs.type}</span> with{" "}
+              {logs.name}
             </p>
 
-            <p>{dateFormate(item.time)}</p>
+            <p>{dateFormate(logs.time)}</p>
           </div>
         </div>
       ))}
+      {/* <Stats sortedLogs={sortedLogs}></Stats> */}
     </div>
   );
 };

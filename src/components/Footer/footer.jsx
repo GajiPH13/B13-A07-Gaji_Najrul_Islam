@@ -29,7 +29,7 @@ const footer = () => {
         </div>
       </nav>
       
-      <div className="flex justify-between gap-120 border-t border-zinc-30 opacity-25 pt-5">
+      <div className="flex justify-between sm:gap-50 md:gap-120 border-t border-zinc-30 opacity-25 pt-5">
         <div>
             <p className="text-[#FAFAFA] text-[10px] ">Copyright © {new Date().getFullYear()} - All right reserved</p>
         </div>

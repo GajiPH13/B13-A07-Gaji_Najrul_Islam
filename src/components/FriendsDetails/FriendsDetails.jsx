@@ -8,6 +8,7 @@ import Text from "../../assets/text.png";
 import Video from "../../assets/video.png";
 import { useContext } from "react";
 import { LogContext } from "../../context/FriendsContext";
+import { toast } from 'react-toastify';
 
 // const booksPromise = fetch("/booksData.json").then((res) => res.json());
 const friendsDetailPromis = fetch("/friends.json").then((res) => res.json());
@@ -38,7 +39,25 @@ const FriendsDetails = () => {
   const {handelHistoryLog,log} = useContext(LogContext);
   console.log(handelHistoryLog,log);
 
-  
+  // const handleToast = (e)=>{
+  //  if(e.innerHtml == 'Call')
+  //   toast(`Call to ${name}`);
+  // }
+  const handleToast = (action) => {
+  switch (action) {
+    case "Call":
+      toast(`Calling ${name}...`);
+      break;
+    case "Text":
+      toast(`Sending a text to ${name}...`);
+      break;
+    case "Video":
+      toast(`Starting a video call with ${name}...`);
+      break;
+    default:
+      toast(`Action with ${name}`);
+  }
+};
   // const handelText = (friendText) =>{
   // // console.log('friendsId',friendId)
   // const textList =call.find((friend) => friend.friendId === friendText.friendId);
@@ -52,9 +71,10 @@ const FriendsDetails = () => {
   // console.log('From video',videoList)
   // }
   return (
-    <div className="grid grid-cols-[1fr_2fr]  gap-3 px-61  py-20 bg-gray-50">
+    <div className=" grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 
+    px-4 sm:px-6 md:px-8 lg:px-61 py-10 sm:py-14 md:py-20 bg-gray-50">
       {/* left */}
-      <div className="max-w-87">
+      <div className="with-full">
         <div>
           <div className="card bg-white shadow-sm">
             <figure className="pt-5">
@@ -95,7 +115,8 @@ const FriendsDetails = () => {
         </div>
         {/* left bottom */}
         <div className="space-y-4">
-          <div className="flex justify-center items-center gap-2 p-4 mt-4 font-medium text-[#1F2937] shadow-sm bg-white rounded-lg">
+          <div className="flex justify-center items-center gap-2 p-4 mt-4 font-medium
+           text-[#1F2937] shadow-sm bg-white rounded-lg">
             <img src={BellSimpleZ} alt="Bell Icon" />
             <p>Snooze 2 weeks</p>
           </div>
@@ -143,24 +164,24 @@ const FriendsDetails = () => {
           <p className="font-medium text-2xl text-[#244D3F] mb-3">
             Quick Check-In
           </p>
-          <div className=" flex justify-between gap-3 ">
+          <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-3">
             <button
-              onClick={() => handelHistoryLog(expectedFriends, "Call")}
-              className="btn w-56 h-30 flex flex-col gap-2 items-center p-4 bg-gray-50"
+              onClick={() =>(handleToast('Call'), handelHistoryLog(expectedFriends, "Call"))}
+              className="btn w-full md:w-56 h-30 flex flex-col gap-2 items-center p-4 bg-gray-50"
             >
               <img src={Call} alt="" className="w-8 h-8 object-cover" />
               <p>Call</p>
             </button>
             <button
-              onClick={() => handelHistoryLog(expectedFriends, "Text")}
-              className="btn w-56 h-30 w-56 flex flex-col gap-2 items-center p-4 bg-gray-50"
+              onClick={() =>(handleToast('Text'), handelHistoryLog(expectedFriends, "Text"))}
+              className="btn w-full md:w-56 h-30  flex flex-col gap-2 items-center p-4 bg-gray-50"
             >
               <img src={Text} alt="" className="w-8 h-8 object-cover" />
               <p>Text</p>
             </button>
             <button
-              onClick={() => handelHistoryLog(expectedFriends, "Video")}
-              className="btn w-56 h-30 w-56 flex flex-col gap-2 items-center p-4 bg-gray-50"
+              onClick={() =>(handleToast('Video'), handelHistoryLog(expectedFriends, "Video"))}
+              className="btn w-full h-30 md:w-56 flex flex-col gap-2 items-center p-4 bg-gray-50"
             >
               <img src={Video} alt="" className="w-8 h-8 object-cover" />
               <p>Video</p>
